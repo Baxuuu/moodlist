@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import SpotifyPlayer from 'react-spotify-player';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import teal from '@material-ui/core/colors/teal';
 
 
 class Playlist extends React.Component {
@@ -8,11 +11,14 @@ class Playlist extends React.Component {
     };
 
    render() {
+
        if(!this.props.playlist_uri)
         return (
             <div>
-                <h1>Create a custom playlist!</h1>
+                
+                
             </div>
+            
         )
 
         const size = {
