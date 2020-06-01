@@ -2,15 +2,12 @@ import React, { Component, useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import './App.css';
 import Playlist from './components/Playlist';
-import { AppBar, Toolbar, Typography, Button, Grid, Paper, Slider, TextField } from "@material-ui/core";
-import teal from '@material-ui/core/colors/teal';
-import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
+import { AppBar, Toolbar, Typography, Button, Grid, Paper, Slider, TextField, Input } from "@material-ui/core";
+import { createMuiTheme, MuiThemeProvider, makeStyles } from '@material-ui/core/styles';
 import spotify_logo from './spotify_logo.png';
 
 import SpotifyWebApi from 'spotify-web-api-js';
 const spotifyApi = new SpotifyWebApi();
-
-var limit;
 
 const theme = createMuiTheme({
   palette: {
@@ -49,7 +46,19 @@ class App extends Component {
       loggedIn: token ? true : false,
       nowPlaying: { name: 'Not Checked', albumArt: '' },
       id: user_id,
-      playlist_uri: ''
+      playlist_uri: '',
+      acousticness: '0.3',
+      danceability: '0.3',
+      energy: '0.3',
+      instrumentalness: '0.3',
+      liveness: '0.3',
+      loudness: '-42',
+      popularity: '30',
+      speechiness: '0.3',
+      tempo: '100',
+      valence: '0.3',
+      limit: '30',
+      moodlist: ''
     }
     console.log(this.state);
   }
@@ -87,12 +96,11 @@ class App extends Component {
   }
 
 
-
   generatePlaylist(){
     //let id = spotifyApi.getMe().then((result) =>{return result.id});
-    let seed = { limit: 10, seed_genres: ["electronic", "drum-and-bass", "techno"], acousticness : 0.0, danceability : 1.0,
-        energy: 1.0, instrumentalness: 0, liveness : 0.0, loudness : -60 ,
-        popularity: 50, speechiness : 0.5, tempo : 150, valence : 0.0 };
+    let seed = { limit: this.state.limit, seed_genres: ["electronic", "drum-and-bass", "techno"], acousticness : this.state.acousticness, danceability : this.state.danceability,
+        energy: this.state.energy, instrumentalness: this.state.instrumentalness, liveness : this.state.liveness, loudness : this.state.loudness ,
+        popularity: this.state.popularity, speechiness : this.state.speechiness, tempo : this.state.tempo, valence : this.state.tempo };
 
      spotifyApi.getRecommendations(seed).then((response) => {
        console.log(response);
@@ -103,7 +111,7 @@ class App extends Component {
       console.log(tracks)
 
       let options = {
-        "name" : "Moodlist generated playlist",
+        "name" : this.state.moodlist,
         "public" : false   
       }
 
@@ -148,15 +156,29 @@ class App extends Component {
 
         });
       }).catch((error) => {console.log(error)});
-    
-    
+  }
+
+  updateAcousticness = (event, newValue) => { this.setState({ acousticness: newValue }); };
+  updateDanceability = (event, newValue) => { this.setState({ danceability: newValue }); };
+  updateEnergy = (event, newValue) => { this.setState({ energy: newValue }); };
+  updateInstrumentalness = (event, newValue) => { this.setState({ instrumentalness: newValue }); };
+  updateLiveness = (event, newValue) => { this.setState({ liveness: newValue }); };
+  updateLoudness = (event, newValue) => { this.setState({ loudness: newValue }); };
+  updatePopularity = (event, newValue) => { this.setState({ popularity: newValue }); };
+  updateSpeechiness = (event, newValue) => { this.setState({ speechiness: newValue }); };
+  updateTempo = (event, newValue) => { this.setState({ tempo: newValue }); };
+  updateValence = (event, newValue) => { this.setState({ valence: newValue }); };
+  updateLimit = (event, newValue) => { this.setState({ limit: newValue }); };
+  updateMoodlist = (e) => {
+    this.setState({
+      moodlist: e.target.value
+    });
   }
 
   render() {
 
     return (
       <MuiThemeProvider theme={theme}>
-      
       <div className="App">
         { !this.state.loggedIn &&
           <body>
@@ -205,9 +227,14 @@ class App extends Component {
                   step={0.01}
                   min={0}
                   max={1}
+                  onChange={this.updateAcousticness}
+                  value={this.state.acousticness}
                 />
                 <Typography style={{marginTop: 15, color: "white"}}>
-                  Acousticness
+                  Acousticness 
+                </Typography>
+                <Typography style={{color: "white"}}>
+                  {this.state.acousticness}
                 </Typography>
               </Grid>
               <Grid item sm style={{height: 300, width: 30}}>
@@ -219,24 +246,14 @@ class App extends Component {
                     step={0.01}
                     min={0}
                     max={1.0}
+                    onChange={this.updateDanceability}
+                    value={this.state.danceability}
                   />
                 <Typography style={{marginTop: 15, color: "white"}}>
                   Danceability
                 </Typography>
-              </Grid>
-
-              <Grid item sm style={{height: 300, width: 30}}>
-                <Slider
-                    orientation="vertical"
-                    defaultValue={0.3}
-                    aria-labelledby="discrete-slider"
-                    valueLabelDisplay="auto"
-                    step={0.01}
-                    min={0}
-                    max={1.0}
-                  />
-                <Typography style={{marginTop: 15, color: "white"}}>
-                  Energy
+                <Typography style={{color: "white"}}>
+                  {this.state.danceability}
                 </Typography>
               </Grid>
 
@@ -249,9 +266,34 @@ class App extends Component {
                     step={0.01}
                     min={0}
                     max={1.0}
+                    onChange={this.updateEnergy}
+                    value={this.state.energy}
+                  />
+                <Typography style={{marginTop: 15, color: "white"}}>
+                  Energy
+                </Typography>
+                <Typography style={{color: "white"}}>
+                  {this.state.energy}
+                </Typography>
+              </Grid>
+
+              <Grid item sm style={{height: 300, width: 30}}>
+                <Slider
+                    orientation="vertical"
+                    defaultValue={0.3}
+                    aria-labelledby="discrete-slider"
+                    valueLabelDisplay="auto"
+                    step={0.01}
+                    min={0}
+                    max={1.0}
+                    onChange={this.updateInstrumentalness}
+                    value={this.state.instrumentalness}
                   />
                 <Typography style={{marginTop: 15, color: "white"}}>
                   Instrumentalness
+                </Typography>
+                <Typography style={{color: "white"}}>
+                  {this.state.instrumentalness}
                 </Typography>
               </Grid>
 
@@ -264,9 +306,14 @@ class App extends Component {
                     step={0.01}
                     min={0}
                     max={1.0}
+                    onChange={this.updateLiveness}
+                    value={this.state.liveness}
                   />
                 <Typography style={{marginTop: 15, color: "white"}}>
                   Liveness
+                </Typography>
+                <Typography style={{color: "white"}}>
+                  {this.state.liveness}
                 </Typography>
               </Grid>
 
@@ -279,9 +326,14 @@ class App extends Component {
                     step={1}
                     min={-60}
                     max={0}
+                    onChange={this.updateLoudness}
+                    value={this.state.loudness}
                   />
                 <Typography style={{marginTop: 15, color: "white"}}>
                   Loudness
+                </Typography>
+                <Typography style={{color: "white"}}>
+                  {this.state.loudness}
                 </Typography>
               </Grid>
 
@@ -294,9 +346,14 @@ class App extends Component {
                     step={1}
                     min={0}
                     max={100}
+                    onChange={this.updatePopularity}
+                    value={this.state.popularity}
                   />
                 <Typography style={{marginTop: 15, color: "white"}}>
                   Popularity
+                </Typography>
+                <Typography style={{color: "white"}}>
+                  {this.state.popularity}
                 </Typography>
               </Grid>
 
@@ -309,9 +366,14 @@ class App extends Component {
                     step={0.01}
                     min={0}
                     max={1.0}
+                    onChange={this.updateSpeechiness}
+                    value={this.state.speechiness}
                   />
                 <Typography style={{marginTop: 15, color: "white"}}>
                   Speechiness
+                </Typography>
+                <Typography style={{color: "white"}}>
+                  {this.state.speechiness}
                 </Typography>
               </Grid>
 
@@ -324,9 +386,14 @@ class App extends Component {
                     step={10}
                     min={50}
                     max={200}
+                    onChange={this.updateTempo}
+                    value={this.state.tempo}
                   />
                 <Typography style={{marginTop: 15, color: "white"}}>
                   Tempo
+                </Typography>
+                <Typography style={{color: "white"}}>
+                  {this.state.tempo}
                 </Typography>
               </Grid>
 
@@ -339,11 +406,17 @@ class App extends Component {
                     step={0.01}
                     min={0}
                     max={1.0}
+                    onChange={this.updateValence}
+                    value={this.state.valence}
                   />
                 <Typography style={{marginTop: 15, color: "white"}}>
                   Valence
                 </Typography>
+                <Typography style={{color: "white"}}>
+                  {this.state.valence}
+                </Typography>
               </Grid>
+
               <Grid item sm style={{height: 300, width: 30}}>
                 <Slider 
                     id="limit"
@@ -355,18 +428,30 @@ class App extends Component {
                     min={1}
                     max={100}
                     color="secondary"
+                    onChange={this.updateLimit}
+                    value={this.state.limit}
                   />
                 <Typography style={{marginTop: 15, color: "white"}}>
                   Limit
                 </Typography>
+                <Typography style={{color: "white"}}>
+                  {this.state.limit}
+                </Typography>
               </Grid>
             </Grid>
             </div>
+
             <div>
-              <TextField id="playlist-name" label="Playlist Name" color="primary" />
+              <TextField 
+                id="playlist-name" 
+                label="Moodlist Name"
+                color="primary" 
+                onChange={this.updateMoodlist}
+                value={this.state.moodlist} 
+              />
 
               <Button style={{marginLeft: 10, marginRight: 10, marginTop: 15, marginBottom: 25}} variant="contained" color="primary" onClick={() => this.generatePlaylist()}>
-                Generate a playlist
+                Generate a Moodlist
               </Button>
               <div id="pl">
                 <img src={spotify_logo} alt="Logo" style={{marginTop: 50}} />
@@ -377,11 +462,11 @@ class App extends Component {
             </div>
             <footer>
               <AppBar position="static" color="primary">
-                    <Typography variant="caption" color="inherit" align="center" style={{marginTop: 7, marginBottom: 7}}>
-                      Moodlist
-                    </Typography>
-                </AppBar>
-              </footer>
+                <Typography variant="caption" color="inherit" align="center" style={{marginTop: 7, marginBottom: 7}}>
+                  Moodlist
+                </Typography>
+              </AppBar>
+            </footer>
           </div>
         }
 
