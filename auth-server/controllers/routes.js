@@ -21,7 +21,7 @@ router.get('/api/details', (req, res) => {
             "tempo": 0,
             "valence": 0,
         };
-
+        let data = [];
         result.forEach(playlist => {
             avg_details.acousticness += playlist.acousticness;
             avg_details.danceability += playlist.danceability;
@@ -35,17 +35,18 @@ router.get('/api/details', (req, res) => {
             avg_details.valence += playlist.valence;
         })
 
-        console.log(avg_details);
-
+        
         for(var key in avg_details) {
             if(avg_details.hasOwnProperty(key)) {
                 avg_details[key] = avg_details[key]/result.length;
                 avg_details[key] = Math.round(avg_details[key] * 100) / 100;
+                data.push({ x: key, y: avg_details[key]});
             }
-
+            
         }
+        console.log(data);
 
-        res.send(avg_details)
+        res.send(data)
     })
 })
 
