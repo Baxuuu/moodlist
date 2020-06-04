@@ -9,7 +9,43 @@ router.get('/api/details', (req, res) => {
     Playlist.find({user_id : req.body.user_id}, (err, result) => { 
         if (err) return res.json(err)
 
-        res.send(result)
+        let avg_details = {
+            "acousticness": 0,
+            "danceability": 0,
+            "energy": 0,
+            "instrumentalness": 0,
+            "liveness": 0,
+            "loudness": 0,
+            "popularity": 0,
+            "speechiness": 0,
+            "tempo": 0,
+            "valence": 0,
+        };
+
+        result.forEach(playlist => {
+            avg_details.acousticness += playlist.acousticness;
+            avg_details.danceability += playlist.danceability;
+            avg_details.energy += playlist.energy;
+            avg_details.instrumentalness += playlist.instrumentalness;
+            avg_details.liveness += playlist.liveness;
+            avg_details.loudness += playlist.loudness;
+            avg_details.popularity += playlist.popularity;
+            avg_details.speechiness += playlist.speechiness;
+            avg_details.tempo += playlist.tempo;
+            avg_details.valence += playlist.valence;
+        })
+
+        console.log(avg_details);
+
+        for(var key in avg_details) {
+            if(avg_details.hasOwnProperty(key)) {
+                avg_details[key] = avg_details[key]/result.length;
+                avg_details[key] = Math.round(avg_details[key] * 100) / 100;
+            }
+
+        }
+
+        res.send(avg_details)
     })
 })
 
