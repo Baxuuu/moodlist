@@ -24,15 +24,19 @@
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 #pl {
   background-color: #3c3c3c;
   position: fixed;
-  text-align: center;
-  align-items: center;
+  text-align: left;
+  align-items: left;
   align-content: center;
   left: 0;
   width: 100%;
