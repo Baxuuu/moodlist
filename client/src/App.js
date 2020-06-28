@@ -79,6 +79,63 @@ class App extends Component {
       valence: "0.3",
       limit: "30",
       moodlist: "",
+      checked_afrobeat: false,
+      checked_alt_rock: false,
+      checked_alternative: false,
+      checked_ambient: false,
+      checked_black_metal: false,
+      checked_blues: false,
+      checked_chill: false,
+      checked_classical: false,
+      checked_club: false,
+      checked_dance: false,
+      checked_dancehall: false,
+      checked_death_metal: false,
+      checked_deep_house: false,
+      checked_detroit_techno: false,
+      checked_disco: false,
+      checked_drum_and_bass: false,
+      checked_dubstep: false,
+      checked_edm: false,
+      checked_electronic: false,
+      checked_folk: false,
+      checked_funk: false,
+      checked_garage: false,
+      checked_groove: false,
+      checked_grunge: false,
+      checked_guitar: false,
+      checked_hard_rock: false,
+      checked_hardcore: false,
+      checked_hardstyle: false,
+      checked_heavy_metal: false,
+      checked_hip_hop: false,
+      checked_house: false,
+      checked_indie: false,
+      checked_indie_pop: false,
+      checked_industrial: false,
+      checked_j_rock: false,
+      checked_jazz: false,
+      checked_k_pop: false,
+      checked_latino: false,
+      checked_metal: false,
+      checked_opera: false,
+      checked_party: false,
+      checked_piano: false,
+      checked_pop: false,
+      checked_progressive_house: false,
+      checked_psych_rock: false,
+      checked_punk: false,
+      checked_punk_rock: false,
+      checked_r_n_b: false,
+      checked_rainy_day: false,
+      checked_reggae: false,
+      checked_rock: false,
+      checked_rock_n_roll: false,
+      checked_ska: false,
+      checked_soul: false,
+      checked_tango: false,
+      checked_techno: false,
+      checked_trance: false,
     };
     console.log(this.state);
   }
@@ -117,9 +174,182 @@ class App extends Component {
 
   generatePlaylist() {
     //let id = spotifyApi.getMe().then((result) =>{return result.id});
+    var musicType = [];
+    if (this.state.checked_afrobeat) {
+      musicType.push("afrobeat");
+    }
+    if (this.state.checked_alt_rock) {
+      musicType.push("alt-rock");
+    }
+    if (this.state.checked_alternative) {
+      musicType.push("alternative");
+    }
+    if (this.state.checked_ambient) {
+      musicType.push("ambient");
+    }
+    if (this.state.checked_black_metal) {
+      musicType.push("black-metal");
+    }
+    if (this.state.checked_blues) {
+      musicType.push("blues");
+    }
+    if (this.state.checked_chill) {
+      musicType.push("chill");
+    }
+    if (this.state.checked_classical) {
+      musicType.push("classical");
+    }
+    if (this.state.checked_club) {
+      musicType.push("club");
+    }
+    if (this.state.checked_dance) {
+      musicType.push("dance");
+    }
+    if (this.state.checked_dancehall) {
+      musicType.push("dancehall");
+    }
+    if (this.state.checked_death_metal) {
+      musicType.push("death-metal");
+    }
+    if (this.state.checked_deep_house) {
+      musicType.push("deep-house");
+    }
+    if (this.state.checked_detroit_techno) {
+      musicType.push("detroit-techno");
+    }
+    if (this.state.checked_disco) {
+      musicType.push("disco");
+    }
+    if (this.state.checked_drum_and_bass) {
+      musicType.push("drum-and-bass");
+    }
+    if (this.state.checked_dubstep) {
+      musicType.push("dubstep");
+    }
+    if (this.state.checked_edm) {
+      musicType.push("edm");
+    }
+    if (this.state.checked_electronic) {
+      musicType.push("electronic");
+    }
+    if (this.state.checked_folk) {
+      musicType.push("folk");
+    }
+    if (this.state.checked_funk) {
+      musicType.push("funk");
+    }
+    if (this.state.checked_garage) {
+      musicType.push("garage");
+    }
+    if (this.state.checked_groove) {
+      musicType.push("groove");
+    }
+    if (this.state.checked_grunge) {
+      musicType.push("grunge");
+    }
+    if (this.state.checked_guitar) {
+      musicType.push("guitar");
+    }
+    if (this.state.checked_hard_rock) {
+      musicType.push("hard-rock");
+    }
+    if (this.state.checked_hardcore) {
+      musicType.push("hardcore");
+    }
+    if (this.state.checked_hardstyle) {
+      musicType.push("hardstyle");
+    }
+    if (this.state.checked_heavy_metal) {
+      musicType.push("heavy-metal");
+    }
+    if (this.state.checked_hip_hop) {
+      musicType.push("hip-hop");
+    }
+    if (this.state.checked_house) {
+      musicType.push("house");
+    }
+    if (this.state.checked_indie) {
+      musicType.push("indie");
+    }
+    if (this.state.checked_indie_pop) {
+      musicType.push("indie-pop");
+    }
+    if (this.state.checked_industrial) {
+      musicType.push("industrial");
+    }
+    if (this.state.checked_j_rock) {
+      musicType.push("j-rock");
+    }
+    if (this.state.checked_jazz) {
+      musicType.push("jazz");
+    }
+    if (this.state.checked_k_pop) {
+      musicType.push("k-pop");
+    }
+    if (this.state.checked_latino) {
+      musicType.push("latino");
+    }
+    if (this.state.checked_metal) {
+      musicType.push("metal");
+    }
+    if (this.state.checked_opera) {
+      musicType.push("opera");
+    }
+    if (this.state.checked_party) {
+      musicType.push("party");
+    }
+    if (this.state.checked_piano) {
+      musicType.push("piano");
+    }
+    if (this.state.checked_pop) {
+      musicType.push("pop");
+    }
+    if (this.state.checked_progressive_house) {
+      musicType.push("progressive-house");
+    }
+    if (this.state.checked_psych_rock) {
+      musicType.push("psych-rock");
+    }
+    if (this.state.checked_punk) {
+      musicType.push("punk");
+    }
+    if (this.state.checked_punk_rock) {
+      musicType.push("punk-rock");
+    }
+    if (this.state.checked_r_n_b) {
+      musicType.push("r-n-b");
+    }
+    if (this.state.checked_rainy_day) {
+      musicType.push("rainy-day");
+    }
+    if (this.state.checked_reggae) {
+      musicType.push("reggae");
+    }
+    if (this.state.checked_rock) {
+      musicType.push("rock");
+    }
+    if (this.state.checked_rock_n_roll) {
+      musicType.push("rock-n-roll");
+    }
+    if (this.state.checked_ska) {
+      musicType.push("ska");
+    }
+    if (this.state.checked_soul) {
+      musicType.push("soul");
+    }
+    if (this.state.checked_tango) {
+      musicType.push("tango");
+    }
+    if (this.state.checked_techno) {
+      musicType.push("techno");
+    }
+    if (this.state.checked_trance) {
+      musicType.push("trance");
+    }
+
     let seed = {
       limit: this.state.limit,
-      seed_genres: ["electronic", "drum-and-bass", "techno"],
+      seed_genres: musicType,
       acousticness: this.state.acousticness,
       danceability: this.state.danceability,
       energy: this.state.energy,
@@ -231,8 +461,8 @@ class App extends Component {
     });
   };
 
-  handleChange = (e) => {
-    console.log("just do something");
+  handleChange = (e, nv) => {
+    this.setState({ [e.target.name]: nv });
   };
 
   render() {
@@ -555,629 +785,482 @@ class App extends Component {
                     <FormGroup column id="pl">
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_afrobeat"
-                          />
+                          <Checkbox color="primary" name="checked_afrobeat" />
                         }
                         onChange={this.handleChange}
+                        value={this.state.checked_afrobeat}
                         label="afrobeat"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_alt-rock"
-                          />
+                          <Checkbox color="primary" name="checked_alt_rock" />
                         }
                         onChange={this.handleChange}
-                        label="alt-rock"
+                        value={this.state.checked_alt_rock}
+                        label="alt_rock"
                       />
                       <FormControlLabel
                         control={
                           <Checkbox
-                            checked="true"
                             color="primary"
                             name="checked_alternative"
                           />
                         }
                         onChange={this.handleChange}
+                        value={this.state.checked_alternative}
                         label="alternative"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_ambient"
-                          />
+                          <Checkbox color="primary" name="checked_ambient" />
                         }
                         onChange={this.handleChange}
+                        value={this.state.checked_ambient}
                         label="ambient"
                       />
                       <FormControlLabel
                         control={
                           <Checkbox
-                            checked="true"
                             color="primary"
-                            name="checked_black-metal"
+                            name="checked_black_metal"
                           />
                         }
                         onChange={this.handleChange}
-                        label="black-metal"
+                        value={this.state.checked_black_metal}
+                        label="black_metal"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_blues"
-                          />
+                          <Checkbox color="primary" name="checked_blues" />
                         }
                         onChange={this.handleChange}
+                        value={this.state.checked_blues}
                         label="blues"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_chill"
-                          />
+                          <Checkbox color="primary" name="checked_chill" />
                         }
                         onChange={this.handleChange}
+                        value={this.state.checked_chill}
                         label="chill"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_classical"
-                          />
+                          <Checkbox color="primary" name="checked_classical" />
                         }
                         onChange={this.handleChange}
+                        value={this.state.checked_classical}
                         label="classical"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_club"
-                          />
+                          <Checkbox color="primary" name="checked_club" />
                         }
                         onChange={this.handleChange}
+                        value={this.state.checked_club}
                         label="club"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_dance"
-                          />
+                          <Checkbox color="primary" name="checked_dance" />
                         }
                         onChange={this.handleChange}
+                        value={this.state.checked_dance}
                         label="dance"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_dancehall"
-                          />
+                          <Checkbox color="primary" name="checked_dancehall" />
                         }
                         onChange={this.handleChange}
+                        value={this.state.checked_dancehall}
                         label="dancehall"
                       />
                       <FormControlLabel
                         control={
                           <Checkbox
-                            checked="true"
                             color="primary"
-                            name="checked_death-metal"
+                            name="checked_death_metal"
                           />
                         }
                         onChange={this.handleChange}
-                        label="death-metal"
+                        value={this.state.checked_death_metal}
+                        label="death_metal"
+                      />
+                      <FormControlLabel
+                        control={
+                          <Checkbox color="primary" name="checked_deep_house" />
+                        }
+                        onChange={this.handleChange}
+                        value={this.state.checked_deep_house}
+                        label="deep_house"
                       />
                       <FormControlLabel
                         control={
                           <Checkbox
-                            checked="true"
                             color="primary"
-                            name="checked_deep-house"
+                            name="checked_detroit_techno"
                           />
                         }
                         onChange={this.handleChange}
-                        label="deep-house"
+                        value={this.state.checked_detroit_techno}
+                        label="detroit_techno"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_detroit-techno"
-                          />
+                          <Checkbox color="primary" name="checked_disco" />
                         }
                         onChange={this.handleChange}
-                        label="detroit-techno"
-                      />
-                      <FormControlLabel
-                        control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_disco"
-                          />
-                        }
-                        onChange={this.handleChange}
+                        value={this.state.checked_disco}
                         label="disco"
                       />
                       <FormControlLabel
                         control={
                           <Checkbox
-                            checked="true"
                             color="primary"
-                            name="checked_drum-and-bass"
+                            name="checked_drum_and_bass"
                           />
                         }
                         onChange={this.handleChange}
-                        label="drum-and-bass"
+                        value={this.state.checked_drum_and_bass}
+                        label="drum_and_bass"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_dubstep"
-                          />
+                          <Checkbox color="primary" name="checked_dubstep" />
                         }
                         onChange={this.handleChange}
+                        value={this.state.checked_dubstep}
                         label="dubstep"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_edm"
-                          />
+                          <Checkbox color="primary" name="checked_edm" />
                         }
                         onChange={this.handleChange}
+                        value={this.state.checked_edm}
                         label="edm"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_electronic"
-                          />
+                          <Checkbox color="primary" name="checked_electronic" />
                         }
                         onChange={this.handleChange}
+                        value={this.state.checked_electronic}
                         label="electronic"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_folk"
-                          />
+                          <Checkbox color="primary" name="checked_folk" />
                         }
                         onChange={this.handleChange}
+                        value={this.state.checked_folk}
                         label="folk"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_funk"
-                          />
+                          <Checkbox color="primary" name="checked_funk" />
                         }
                         onChange={this.handleChange}
+                        value={this.state.checked_funk}
                         label="funk"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_garage"
-                          />
+                          <Checkbox color="primary" name="checked_garage" />
                         }
                         onChange={this.handleChange}
+                        value={this.state.checked_garage}
                         label="garage"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_groove"
-                          />
+                          <Checkbox color="primary" name="checked_groove" />
                         }
                         onChange={this.handleChange}
+                        value={this.state.checked_groove}
                         label="groove"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_grunge"
-                          />
+                          <Checkbox color="primary" name="checked_grunge" />
                         }
                         onChange={this.handleChange}
+                        value={this.state.checked_grunge}
                         label="grunge"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_guitar"
-                          />
+                          <Checkbox color="primary" name="checked_guitar" />
                         }
                         onChange={this.handleChange}
+                        value={this.state.checked_guitar}
                         label="guitar"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_hard-rock"
-                          />
+                          <Checkbox color="primary" name="checked_hard_rock" />
                         }
                         onChange={this.handleChange}
-                        label="hard-rock"
+                        value={this.state.checked_hard_rock}
+                        label="hard_rock"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_hardcore"
-                          />
+                          <Checkbox color="primary" name="checked_hardcore" />
                         }
                         onChange={this.handleChange}
+                        value={this.state.checked_hardcore}
                         label="hardcore"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_hardstyle"
-                          />
+                          <Checkbox color="primary" name="checked_hardstyle" />
                         }
                         onChange={this.handleChange}
+                        value={this.state.checked_hardstyle}
                         label="hardstyle"
                       />
                       <FormControlLabel
                         control={
                           <Checkbox
-                            checked="true"
                             color="primary"
-                            name="checked_heavy-metal"
+                            name="checked_heavy_metal"
                           />
                         }
                         onChange={this.handleChange}
-                        label="heavy-metal"
+                        value={this.state.checked_heavy_metal}
+                        label="heavy_metal"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_hip-hop"
-                          />
+                          <Checkbox color="primary" name="checked_hip_hop" />
                         }
                         onChange={this.handleChange}
-                        label="hip-hop"
+                        value={this.state.checked_hip_hop}
+                        label="hip_hop"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_house"
-                          />
+                          <Checkbox color="primary" name="checked_house" />
                         }
                         onChange={this.handleChange}
+                        value={this.state.checked_house}
                         label="house"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_indie"
-                          />
+                          <Checkbox color="primary" name="checked_indie" />
                         }
                         onChange={this.handleChange}
+                        value={this.state.checked_indie}
                         label="indie"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_indie-pop"
-                          />
+                          <Checkbox color="primary" name="checked_indie_pop" />
                         }
                         onChange={this.handleChange}
-                        label="indie-pop"
+                        value={this.state.checked_indie_pop}
+                        label="indie_pop"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_industrial"
-                          />
+                          <Checkbox color="primary" name="checked_industrial" />
                         }
                         onChange={this.handleChange}
+                        value={this.state.checked_industrial}
                         label="industrial"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_j-rock"
-                          />
+                          <Checkbox color="primary" name="checked_j_rock" />
                         }
                         onChange={this.handleChange}
-                        label="j-rock"
+                        value={this.state.checked_j_rock}
+                        label="j_rock"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_jazz"
-                          />
+                          <Checkbox color="primary" name="checked_jazz" />
                         }
                         onChange={this.handleChange}
+                        value={this.state.checked_jazz}
                         label="jazz"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_k-pop"
-                          />
+                          <Checkbox color="primary" name="checked_k_pop" />
                         }
                         onChange={this.handleChange}
-                        label="k-pop"
+                        value={this.state.checked_k_pop}
+                        label="k_pop"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_latino"
-                          />
+                          <Checkbox color="primary" name="checked_latino" />
                         }
                         onChange={this.handleChange}
+                        value={this.state.checked_latino}
                         label="latino"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_metal"
-                          />
+                          <Checkbox color="primary" name="checked_metal" />
                         }
                         onChange={this.handleChange}
+                        value={this.state.checked_metal}
                         label="metal"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_opera"
-                          />
+                          <Checkbox color="primary" name="checked_opera" />
                         }
                         onChange={this.handleChange}
+                        value={this.state.checked_opera}
                         label="opera"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_party"
-                          />
+                          <Checkbox color="primary" name="checked_party" />
                         }
                         onChange={this.handleChange}
+                        value={this.state.checked_party}
                         label="party"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_piano"
-                          />
+                          <Checkbox color="primary" name="checked_piano" />
                         }
                         onChange={this.handleChange}
+                        value={this.state.checked_piano}
                         label="piano"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_pop"
-                          />
+                          <Checkbox color="primary" name="checked_pop" />
                         }
                         onChange={this.handleChange}
+                        value={this.state.checked_pop}
                         label="pop"
                       />
                       <FormControlLabel
                         control={
                           <Checkbox
-                            checked="true"
                             color="primary"
-                            name="checked_progressive-house"
+                            name="checked_progressive_house"
                           />
                         }
                         onChange={this.handleChange}
-                        label="progressive-house"
+                        value={this.state.checked_progressive_house}
+                        label="progressive_house"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_psych-rock"
-                          />
+                          <Checkbox color="primary" name="checked_psych_rock" />
                         }
                         onChange={this.handleChange}
-                        label="psych-rock"
+                        value={this.state.checked_psych_rock}
+                        label="psych_rock"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_punk"
-                          />
+                          <Checkbox color="primary" name="checked_punk" />
                         }
                         onChange={this.handleChange}
+                        value={this.state.checked_punk}
                         label="punk"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_punk-rock"
-                          />
+                          <Checkbox color="primary" name="checked_punk_rock" />
                         }
                         onChange={this.handleChange}
-                        label="punk-rock"
+                        value={this.state.checked_punk_rock}
+                        label="punk_rock"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_r-n-b"
-                          />
+                          <Checkbox color="primary" name="checked_r_n_b" />
                         }
                         onChange={this.handleChange}
-                        label="r-n-b"
+                        value={this.state.checked_r_n_b}
+                        label="r_n_b"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_rainy-day"
-                          />
+                          <Checkbox color="primary" name="checked_rainy_day" />
                         }
                         onChange={this.handleChange}
-                        label="rainy-day"
+                        value={this.state.checked_rainy_day}
+                        label="rainy_day"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_reggae"
-                          />
+                          <Checkbox color="primary" name="checked_reggae" />
                         }
                         onChange={this.handleChange}
+                        value={this.state.checked_reggae}
                         label="reggae"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_rock"
-                          />
+                          <Checkbox color="primary" name="checked_rock" />
                         }
                         onChange={this.handleChange}
+                        value={this.state.checked_rock}
                         label="rock"
                       />
                       <FormControlLabel
                         control={
                           <Checkbox
-                            checked="true"
                             color="primary"
-                            name="checked_rock-n-roll"
+                            name="checked_rock_n_roll"
                           />
                         }
                         onChange={this.handleChange}
-                        label="rock-n-roll"
+                        value={this.state.checked_rock_n_roll}
+                        label="rock_n_roll"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_ska"
-                          />
+                          <Checkbox color="primary" name="checked_ska" />
                         }
                         onChange={this.handleChange}
+                        value={this.state.checked_ska}
                         label="ska"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_soul"
-                          />
+                          <Checkbox color="primary" name="checked_soul" />
                         }
                         onChange={this.handleChange}
+                        value={this.state.checked_soul}
                         label="soul"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_tango"
-                          />
+                          <Checkbox color="primary" name="checked_tango" />
                         }
                         onChange={this.handleChange}
+                        value={this.state.checked_tango}
                         label="tango"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_techno"
-                          />
+                          <Checkbox color="primary" name="checked_techno" />
                         }
                         onChange={this.handleChange}
+                        value={this.state.checked_techno}
                         label="techno"
                       />
                       <FormControlLabel
                         control={
-                          <Checkbox
-                            checked="true"
-                            color="primary"
-                            name="checked_trance"
-                          />
+                          <Checkbox color="primary" name="checked_trance" />
                         }
                         onChange={this.handleChange}
+                        value={this.state.checked_trance}
                         label="trance"
                       />
                     </FormGroup>

@@ -1,0 +1,8 @@
+Commands to start app:
+    Commands to start app:
+    Server:
+        npm install
+        node app.js
+    Client:
+        npm install
+        npm start
