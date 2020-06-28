@@ -172,195 +172,257 @@ class App extends Component {
     });
   }
 
-  generatePlaylist() {
-    //let id = spotifyApi.getMe().then((result) =>{return result.id});
-    var musicType = [];
-    if (this.state.checked_afrobeat) {
-      musicType.push("afrobeat");
-    }
-    if (this.state.checked_alt_rock) {
-      musicType.push("alt-rock");
-    }
-    if (this.state.checked_alternative) {
-      musicType.push("alternative");
-    }
-    if (this.state.checked_ambient) {
-      musicType.push("ambient");
-    }
-    if (this.state.checked_black_metal) {
-      musicType.push("black-metal");
-    }
-    if (this.state.checked_blues) {
-      musicType.push("blues");
-    }
-    if (this.state.checked_chill) {
-      musicType.push("chill");
-    }
-    if (this.state.checked_classical) {
-      musicType.push("classical");
-    }
-    if (this.state.checked_club) {
-      musicType.push("club");
-    }
-    if (this.state.checked_dance) {
-      musicType.push("dance");
-    }
-    if (this.state.checked_dancehall) {
-      musicType.push("dancehall");
-    }
-    if (this.state.checked_death_metal) {
-      musicType.push("death-metal");
-    }
-    if (this.state.checked_deep_house) {
-      musicType.push("deep-house");
-    }
-    if (this.state.checked_detroit_techno) {
-      musicType.push("detroit-techno");
-    }
-    if (this.state.checked_disco) {
-      musicType.push("disco");
-    }
-    if (this.state.checked_drum_and_bass) {
-      musicType.push("drum-and-bass");
-    }
-    if (this.state.checked_dubstep) {
-      musicType.push("dubstep");
-    }
-    if (this.state.checked_edm) {
-      musicType.push("edm");
-    }
-    if (this.state.checked_electronic) {
-      musicType.push("electronic");
-    }
-    if (this.state.checked_folk) {
-      musicType.push("folk");
-    }
-    if (this.state.checked_funk) {
-      musicType.push("funk");
-    }
-    if (this.state.checked_garage) {
-      musicType.push("garage");
-    }
-    if (this.state.checked_groove) {
-      musicType.push("groove");
-    }
-    if (this.state.checked_grunge) {
-      musicType.push("grunge");
-    }
-    if (this.state.checked_guitar) {
-      musicType.push("guitar");
-    }
-    if (this.state.checked_hard_rock) {
-      musicType.push("hard-rock");
-    }
-    if (this.state.checked_hardcore) {
-      musicType.push("hardcore");
-    }
-    if (this.state.checked_hardstyle) {
-      musicType.push("hardstyle");
-    }
-    if (this.state.checked_heavy_metal) {
-      musicType.push("heavy-metal");
-    }
-    if (this.state.checked_hip_hop) {
-      musicType.push("hip-hop");
-    }
-    if (this.state.checked_house) {
-      musicType.push("house");
-    }
-    if (this.state.checked_indie) {
-      musicType.push("indie");
-    }
-    if (this.state.checked_indie_pop) {
-      musicType.push("indie-pop");
-    }
-    if (this.state.checked_industrial) {
-      musicType.push("industrial");
-    }
-    if (this.state.checked_j_rock) {
-      musicType.push("j-rock");
-    }
-    if (this.state.checked_jazz) {
-      musicType.push("jazz");
-    }
-    if (this.state.checked_k_pop) {
-      musicType.push("k-pop");
-    }
-    if (this.state.checked_latino) {
-      musicType.push("latino");
-    }
-    if (this.state.checked_metal) {
-      musicType.push("metal");
-    }
-    if (this.state.checked_opera) {
-      musicType.push("opera");
-    }
-    if (this.state.checked_party) {
-      musicType.push("party");
-    }
-    if (this.state.checked_piano) {
-      musicType.push("piano");
-    }
-    if (this.state.checked_pop) {
-      musicType.push("pop");
-    }
-    if (this.state.checked_progressive_house) {
-      musicType.push("progressive-house");
-    }
-    if (this.state.checked_psych_rock) {
-      musicType.push("psych-rock");
-    }
-    if (this.state.checked_punk) {
-      musicType.push("punk");
-    }
-    if (this.state.checked_punk_rock) {
-      musicType.push("punk-rock");
-    }
-    if (this.state.checked_r_n_b) {
-      musicType.push("r-n-b");
-    }
-    if (this.state.checked_rainy_day) {
-      musicType.push("rainy-day");
-    }
-    if (this.state.checked_reggae) {
-      musicType.push("reggae");
-    }
-    if (this.state.checked_rock) {
-      musicType.push("rock");
-    }
-    if (this.state.checked_rock_n_roll) {
-      musicType.push("rock-n-roll");
-    }
-    if (this.state.checked_ska) {
-      musicType.push("ska");
-    }
-    if (this.state.checked_soul) {
-      musicType.push("soul");
-    }
-    if (this.state.checked_tango) {
-      musicType.push("tango");
-    }
-    if (this.state.checked_techno) {
-      musicType.push("techno");
-    }
-    if (this.state.checked_trance) {
-      musicType.push("trance");
-    }
+  generatePlaylist(params) {
+    var seed;
+    if (params === "party") {
+      seed = {
+        limit: this.state.limit,
+        seed_genres: ["pop", "party", "house", "disco", "club", "dance"],
+        acousticness: this.state.acousticness,
+        danceability: "1",
+        energy: "1",
+        instrumentalness: this.state.instrumentalness,
+        liveness: "1",
+        loudness: "0",
+        popularity: "100",
+        speechiness: this.state.speechiness,
+        tempo: "150",
+        valence: this.state.valence,
+      };
+    } else if (params === "sad") {
+      seed = {
+        limit: this.state.limit,
+        seed_genres: ["chill", "indie", "hip-hop", "edm"],
+        acousticness: this.state.acousticness,
+        danceability: "0",
+        energy: "0",
+        instrumentalness: "0.5",
+        liveness: "0",
+        loudness: "0",
+        popularity: "50",
+        speechiness: "1",
+        tempo: "50",
+        valence: "1",
+      };
+    } else if (params === "training") {
+      seed = {
+        limit: this.state.limit,
+        seed_genres: ["dubstep", "deep-house", "rock", "hard-rock"],
+        acousticness: this.state.acousticness,
+        danceability: "0.5",
+        energy: "1",
+        instrumentalness: this.state.instrumentalness,
+        liveness: this.state.liveness,
+        loudness: "-20",
+        popularity: "50",
+        speechiness: this.state.speechiness,
+        tempo: "200",
+        valence: this.state.valence,
+      };
+    } else if (params === "morning") {
+      seed = {
+        limit: this.state.limit,
+        seed_genres: ["rock", "pop", "piano", "dance"],
+        acousticness: this.state.acousticness,
+        danceability: "0.8",
+        energy: "0.6",
+        instrumentalness: this.state.instrumentalness,
+        liveness: this.state.liveness,
+        loudness: "-30",
+        popularity: "70",
+        speechiness: this.state.speechiness,
+        tempo: "120",
+        valence: this.state.valence,
+      };
+    } else if (params === "moodlist") {
+      var musicType = [];
+      if (this.state.checked_afrobeat) {
+        musicType.push("afrobeat");
+      }
+      if (this.state.checked_alt_rock) {
+        musicType.push("alt-rock");
+      }
+      if (this.state.checked_alternative) {
+        musicType.push("alternative");
+      }
+      if (this.state.checked_ambient) {
+        musicType.push("ambient");
+      }
+      if (this.state.checked_black_metal) {
+        musicType.push("black-metal");
+      }
+      if (this.state.checked_blues) {
+        musicType.push("blues");
+      }
+      if (this.state.checked_chill) {
+        musicType.push("chill");
+      }
+      if (this.state.checked_classical) {
+        musicType.push("classical");
+      }
+      if (this.state.checked_club) {
+        musicType.push("club");
+      }
+      if (this.state.checked_dance) {
+        musicType.push("dance");
+      }
+      if (this.state.checked_dancehall) {
+        musicType.push("dancehall");
+      }
+      if (this.state.checked_death_metal) {
+        musicType.push("death-metal");
+      }
+      if (this.state.checked_deep_house) {
+        musicType.push("deep-house");
+      }
+      if (this.state.checked_detroit_techno) {
+        musicType.push("detroit-techno");
+      }
+      if (this.state.checked_disco) {
+        musicType.push("disco");
+      }
+      if (this.state.checked_drum_and_bass) {
+        musicType.push("drum-and-bass");
+      }
+      if (this.state.checked_dubstep) {
+        musicType.push("dubstep");
+      }
+      if (this.state.checked_edm) {
+        musicType.push("edm");
+      }
+      if (this.state.checked_electronic) {
+        musicType.push("electronic");
+      }
+      if (this.state.checked_folk) {
+        musicType.push("folk");
+      }
+      if (this.state.checked_funk) {
+        musicType.push("funk");
+      }
+      if (this.state.checked_garage) {
+        musicType.push("garage");
+      }
+      if (this.state.checked_groove) {
+        musicType.push("groove");
+      }
+      if (this.state.checked_grunge) {
+        musicType.push("grunge");
+      }
+      if (this.state.checked_guitar) {
+        musicType.push("guitar");
+      }
+      if (this.state.checked_hard_rock) {
+        musicType.push("hard-rock");
+      }
+      if (this.state.checked_hardcore) {
+        musicType.push("hardcore");
+      }
+      if (this.state.checked_hardstyle) {
+        musicType.push("hardstyle");
+      }
+      if (this.state.checked_heavy_metal) {
+        musicType.push("heavy-metal");
+      }
+      if (this.state.checked_hip_hop) {
+        musicType.push("hip-hop");
+      }
+      if (this.state.checked_house) {
+        musicType.push("house");
+      }
+      if (this.state.checked_indie) {
+        musicType.push("indie");
+      }
+      if (this.state.checked_indie_pop) {
+        musicType.push("indie-pop");
+      }
+      if (this.state.checked_industrial) {
+        musicType.push("industrial");
+      }
+      if (this.state.checked_j_rock) {
+        musicType.push("j-rock");
+      }
+      if (this.state.checked_jazz) {
+        musicType.push("jazz");
+      }
+      if (this.state.checked_k_pop) {
+        musicType.push("k-pop");
+      }
+      if (this.state.checked_latino) {
+        musicType.push("latino");
+      }
+      if (this.state.checked_metal) {
+        musicType.push("metal");
+      }
+      if (this.state.checked_opera) {
+        musicType.push("opera");
+      }
+      if (this.state.checked_party) {
+        musicType.push("party");
+      }
+      if (this.state.checked_piano) {
+        musicType.push("piano");
+      }
+      if (this.state.checked_pop) {
+        musicType.push("pop");
+      }
+      if (this.state.checked_progressive_house) {
+        musicType.push("progressive-house");
+      }
+      if (this.state.checked_psych_rock) {
+        musicType.push("psych-rock");
+      }
+      if (this.state.checked_punk) {
+        musicType.push("punk");
+      }
+      if (this.state.checked_punk_rock) {
+        musicType.push("punk-rock");
+      }
+      if (this.state.checked_r_n_b) {
+        musicType.push("r-n-b");
+      }
+      if (this.state.checked_rainy_day) {
+        musicType.push("rainy-day");
+      }
+      if (this.state.checked_reggae) {
+        musicType.push("reggae");
+      }
+      if (this.state.checked_rock) {
+        musicType.push("rock");
+      }
+      if (this.state.checked_rock_n_roll) {
+        musicType.push("rock-n-roll");
+      }
+      if (this.state.checked_ska) {
+        musicType.push("ska");
+      }
+      if (this.state.checked_soul) {
+        musicType.push("soul");
+      }
+      if (this.state.checked_tango) {
+        musicType.push("tango");
+      }
+      if (this.state.checked_techno) {
+        musicType.push("techno");
+      }
+      if (this.state.checked_trance) {
+        musicType.push("trance");
+      }
 
-    let seed = {
-      limit: this.state.limit,
-      seed_genres: musicType,
-      acousticness: this.state.acousticness,
-      danceability: this.state.danceability,
-      energy: this.state.energy,
-      instrumentalness: this.state.instrumentalness,
-      liveness: this.state.liveness,
-      loudness: this.state.loudness,
-      popularity: this.state.popularity,
-      speechiness: this.state.speechiness,
-      tempo: this.state.tempo,
-      valence: this.state.tempo,
-    };
+      seed = {
+        limit: this.state.limit,
+        seed_genres: musicType,
+        acousticness: this.state.acousticness,
+        danceability: this.state.danceability,
+        energy: this.state.energy,
+        instrumentalness: this.state.instrumentalness,
+        liveness: this.state.liveness,
+        loudness: this.state.loudness,
+        popularity: this.state.popularity,
+        speechiness: this.state.speechiness,
+        tempo: this.state.tempo,
+        valence: this.state.valence,
+      };
+    }
 
     spotifyApi
       .getRecommendations(seed)
@@ -371,6 +433,10 @@ class App extends Component {
           tracks.push(track.uri);
         });
         console.log(tracks);
+
+        if (this.state.moodlist == "") {
+          this.setState({ moodlist: "moja playlista" });
+        }
 
         let options = {
           name: this.state.moodlist,
@@ -760,28 +826,87 @@ class App extends Component {
                     </Grid>
                   </div>
                   <div>
-                    <TextField
-                      id="playlist-name"
-                      label="Moodlist Name"
-                      color="primary"
-                      onChange={this.updateMoodlist}
-                      value={this.state.moodlist}
-                    />
+                    <div>
+                      <TextField
+                        id="playlist-name"
+                        label="Moodlist Name"
+                        color="primary"
+                        onChange={this.updateMoodlist}
+                        value={this.state.moodlist}
+                      />
 
-                    <Button
-                      style={{
-                        marginLeft: 10,
-                        marginRight: 10,
-                        marginTop: 15,
-                        marginBottom: 25,
-                      }}
-                      variant="contained"
-                      color="primary"
-                      onClick={() => this.generatePlaylist()}
-                    >
-                      Generate a Moodlist
-                    </Button>
+                      <Button
+                        style={{
+                          marginLeft: 10,
+                          marginRight: 10,
+                          marginTop: 15,
+                          marginBottom: 25,
+                        }}
+                        variant="contained"
+                        color="primary"
+                        onClick={() => this.generatePlaylist("moodlist")}
+                      >
+                        Generate a Moodlist
+                      </Button>
 
+                      <div>
+                        <Button
+                          style={{
+                            marginLeft: 10,
+                            marginRight: 10,
+                            marginTop: 15,
+                            marginBottom: 25,
+                          }}
+                          variant="contained"
+                          color="primary"
+                          onClick={() => this.generatePlaylist("party")}
+                        >
+                          Generate Party Playlist
+                        </Button>
+
+                        <Button
+                          style={{
+                            marginLeft: 10,
+                            marginRight: 10,
+                            marginTop: 15,
+                            marginBottom: 25,
+                          }}
+                          variant="contained"
+                          color="primary"
+                          onClick={() => this.generatePlaylist("sad")}
+                        >
+                          Generate Sad Playlist
+                        </Button>
+
+                        <Button
+                          style={{
+                            marginLeft: 10,
+                            marginRight: 10,
+                            marginTop: 15,
+                            marginBottom: 25,
+                          }}
+                          variant="contained"
+                          color="primary"
+                          onClick={() => this.generatePlaylist("training")}
+                        >
+                          Generate Training Playlist
+                        </Button>
+
+                        <Button
+                          style={{
+                            marginLeft: 10,
+                            marginRight: 10,
+                            marginTop: 15,
+                            marginBottom: 25,
+                          }}
+                          variant="contained"
+                          color="primary"
+                          onClick={() => this.generatePlaylist("morning")}
+                        >
+                          Generate Happy Morning Playlist
+                        </Button>
+                      </div>
+                    </div>
                     <FormGroup column id="pl">
                       <FormControlLabel
                         control={
