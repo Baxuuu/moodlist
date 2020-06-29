@@ -600,7 +600,7 @@ class App extends Component {
                   <div style={{ display: "flex", justifyContent: "center" }}>
                     <Grid
                       container
-                      style={{ marginTop: 40, marginBottom: 70, width: 1350 }}
+                      style={{ marginTop: 40, marginBottom: 70, width: 1250 }}
                     >
                       <Grid item sm style={{ height: 300, width: 30 }}>
                         <Slider
@@ -909,22 +909,25 @@ class App extends Component {
                     </div>
                     <FormGroup column id="pl">
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_afrobeat" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_afrobeat}
-                        label="afrobeat"
+                        label="Afrobeat"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_alt_rock" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_alt_rock}
-                        label="alt_rock"
+                        label="Alt Rock"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox
                             color="primary"
@@ -933,17 +936,19 @@ class App extends Component {
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_alternative}
-                        label="alternative"
+                        label="Alternative"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_ambient" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_ambient}
-                        label="ambient"
+                        label="Ambient"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox
                             color="primary"
@@ -952,57 +957,64 @@ class App extends Component {
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_black_metal}
-                        label="black_metal"
+                        label="Black Metal"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_blues" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_blues}
-                        label="blues"
+                        label="Blues"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_chill" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_chill}
-                        label="chill"
+                        label="Chill"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_classical" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_classical}
-                        label="classical"
+                        label="Classical"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_club" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_club}
-                        label="club"
+                        label="Club"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_dance" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_dance}
-                        label="dance"
+                        label="Dance"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_dancehall" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_dancehall}
-                        label="dancehall"
+                        label="Dancehall"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox
                             color="primary"
@@ -1011,17 +1023,19 @@ class App extends Component {
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_death_metal}
-                        label="death_metal"
+                        label="Death Metal"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_deep_house" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_deep_house}
-                        label="deep_house"
+                        label="Deep House"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox
                             color="primary"
@@ -1030,17 +1044,19 @@ class App extends Component {
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_detroit_techno}
-                        label="detroit_techno"
+                        label="Detroit Techno"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_disco" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_disco}
-                        label="disco"
+                        label="Disco"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox
                             color="primary"
@@ -1049,105 +1065,118 @@ class App extends Component {
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_drum_and_bass}
-                        label="drum_and_bass"
+                        label="Drum and Bass"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_dubstep" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_dubstep}
-                        label="dubstep"
+                        label="Dubstep"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_edm" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_edm}
-                        label="edm"
+                        label="EDM"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_electronic" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_electronic}
-                        label="electronic"
+                        label="Electronic"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_folk" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_folk}
-                        label="folk"
+                        label="Folk"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_funk" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_funk}
-                        label="funk"
+                        label="Funk"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_garage" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_garage}
-                        label="garage"
+                        label="Garage"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_groove" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_groove}
-                        label="groove"
+                        label="Groove"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_grunge" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_grunge}
-                        label="grunge"
+                        label="Grunge"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_guitar" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_guitar}
-                        label="guitar"
+                        label="Guitar"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_hard_rock" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_hard_rock}
-                        label="hard_rock"
+                        label="Hard Rock"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_hardcore" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_hardcore}
-                        label="hardcore"
+                        label="Hardcore"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_hardstyle" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_hardstyle}
-                        label="hardstyle"
+                        label="Hardstyle"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox
                             color="primary"
@@ -1156,121 +1185,136 @@ class App extends Component {
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_heavy_metal}
-                        label="heavy_metal"
+                        label="Heavy Metal"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_hip_hop" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_hip_hop}
-                        label="hip_hop"
+                        label="Hip Hop"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_house" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_house}
-                        label="house"
+                        label="House"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_indie" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_indie}
-                        label="indie"
+                        label="Indie"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_indie_pop" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_indie_pop}
-                        label="indie_pop"
+                        label="Indie Pop"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_industrial" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_industrial}
-                        label="industrial"
+                        label="Industrial"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_j_rock" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_j_rock}
-                        label="j_rock"
+                        label="J Rock"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_jazz" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_jazz}
-                        label="jazz"
+                        label="Jazz"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_k_pop" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_k_pop}
-                        label="k_pop"
+                        label="K Pop"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_latino" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_latino}
-                        label="latino"
+                        label="Latino"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_metal" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_metal}
-                        label="metal"
+                        label="Metal"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_opera" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_opera}
-                        label="opera"
+                        label="Opera"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_party" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_party}
-                        label="party"
+                        label="Party"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_piano" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_piano}
-                        label="piano"
+                        label="Piano"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_pop" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_pop}
-                        label="pop"
+                        label="Pop"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox
                             color="primary"
@@ -1279,65 +1323,73 @@ class App extends Component {
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_progressive_house}
-                        label="progressive_house"
+                        label="Progressive House"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_psych_rock" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_psych_rock}
-                        label="psych_rock"
+                        label="Psych Rock"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_punk" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_punk}
-                        label="punk"
+                        label="Punk"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_punk_rock" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_punk_rock}
-                        label="punk_rock"
+                        label="Punk Rock"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_r_n_b" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_r_n_b}
-                        label="r_n_b"
+                        label="R'n'B"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_rainy_day" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_rainy_day}
-                        label="rainy_day"
+                        label="Rainy Day"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_reggae" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_reggae}
-                        label="reggae"
+                        label="Reggae"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_rock" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_rock}
-                        label="rock"
+                        label="Rock"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox
                             color="primary"
@@ -1346,47 +1398,52 @@ class App extends Component {
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_rock_n_roll}
-                        label="rock_n_roll"
+                        label="Rock n Roll"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_ska" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_ska}
-                        label="ska"
+                        label="Ska"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_soul" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_soul}
-                        label="soul"
+                        label="Soul"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_tango" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_tango}
-                        label="tango"
+                        label="Tango"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_techno" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_techno}
-                        label="techno"
+                        label="Techno"
                       />
                       <FormControlLabel
+                      style={{ color: "white" }}
                         control={
                           <Checkbox color="primary" name="checked_trance" />
                         }
                         onChange={this.handleChange}
                         value={this.state.checked_trance}
-                        label="trance"
+                        label="Trance"
                       />
                     </FormGroup>
 
